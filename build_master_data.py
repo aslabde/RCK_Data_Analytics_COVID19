@@ -31,3 +31,15 @@ aggregated_data_b=aggregated_data_b.groupby('Date').agg('sum')
 aggregated_data_b.to_csv('csv_B.csv')
 
 #BUILD CSV C: OFFICIAL DATA HOSPITALIZATIONS, DEATHS AND RECOVERIES AT SPAIN BY DATE
+load_data_c=pd.read_csv('casos_hosp_uci_def_sexo_edad_provres.csv')
+aggregated_data_c=load_data_c.groupby(['sexo','grupo_edad','fecha']).agg('sum')
+aggregated_data_c.to_csv('csv_C.csv')
+
+#BUILD CSV D: HOLIDAYS IN SPAIN
+load_data_d=pd.read_csv('calendario_laboral_spain.csv')
+columns_d = ['Fecha/Data','Festivo']
+holidays_dataset_filtered = load_data_d[columns_d]
+holidays_dataset_filtered.to_csv('csv_D.csv')
+
+#BUILD CSV E: OFFICIAL DATA HOSPITALIZATIONS, DEATHS AND RECOVERIES AT SPAIN BY DATE
+
