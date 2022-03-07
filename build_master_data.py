@@ -4,11 +4,6 @@
 #
 #
 
-#OUTPUT:
-#
-#
-#
-#
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -40,6 +35,4 @@ load_data_d=pd.read_csv('calendario_laboral_spain.csv')
 columns_d = ['Fecha/Data','Festivo']
 holidays_dataset_filtered = load_data_d[columns_d]
 holidays_dataset_filtered.to_csv('csv_D.csv')
-
-#BUILD CSV E: OFFICIAL DATA HOSPITALIZATIONS, DEATHS AND RECOVERIES AT SPAIN BY DATE
 
